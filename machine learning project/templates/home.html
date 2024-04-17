@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Background gradient */
+            background: linear-gradient(to bottom, #6495ED, #F4F4F4);
+            /* Background image (optional) */
+            /* background-image: url('background-image.jpg'); */
+            /* Background size and repeat */
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* Height to cover the whole screen */
+            min-height: 100vh;
+            /* Flex container for centering content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px; /* Reduced padding for inputs */
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Customer Churn Prediction</h1>
+        <form action="/predict" method="post">
+                gender: <input type="gender" name="gender"><br><br>
+                SeniorCitizen: <input type='SeniorCitizen' name='SeniorCitizen'><br><br>
+                Partner: <input type="Partner" name="Partner"><br><br>
+                Dependents: <input type="Dependents" name="Dependents"><br><br>
+                tenure: <input type="tenure" name="tenure"><br><br>
+                PhoneService: <input type="PhoneService" name="PhoneService"><br><br>
+                MultipleLines: <input type="MultipleLines" name="MultipleLines"><br><br>
+                InternetService: <input type="InternetService" name="InternetService"><br><br>
+                OnlineSecurity: <input type="OnlineSecurity" name="OnlineSecurity"><br><br>
+                OnlineBackup: <input type="OnlineBackup" name="OnlineBackup"><br><br>
+                DeviceProtection: <input type="DeviceProtection" name="DeviceProtection"><br><br>
+                TechSupport: <input type="TechSupport" name="TechSupport"><br><br>
+                StreamingTV: <input type="StreamingTV" name="StreamingTV"><br><br>
+                StreamingMovies: <input type="StreamingMovies" name="StreamingMovies"><br><br>
+                Contract: <input type="Contract" name="Contract"><br><br>
+                PaperlessBilling: <input type="PaperlessBilling" name="PaperlessBilling"><br><br>
+                PaymentMethod: <input type="PaymentMethod" name="PaymentMethod"><br><br>
+                MonthlyCharges: <input type="MonthlyCharges" name="MonthlyCharges"><br><br>
+                TotalCharges: <input type="TotalCharges" name="TotalCharges"><br><br><br>
+                
+              <input type="submit" value="Predict">
+            </form>
+
+
+        </form>
+        <br><br>
+        <h3>{{ result }}</h3>
+    </div>
+</body>
+</html>
